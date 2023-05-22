@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://csewi00bgdghf"]
+
+[ext_resource type="Script" path="res://Objects/Resources/ResourceNode.gd" id="1_khgqe"]
+[ext_resource type="Resource" uid="uid://ds7ax48gnanmt" path="res://Objects/Resources/Types/axeable.tres" id="2_hegsu"]
+[ext_resource type="PackedScene" uid="uid://byedex58qbksr" path="res://Objects/Pickups/pickup_brown_wood.tscn" id="3_t38jc"]
+[ext_resource type="Texture2D" uid="uid://cd2a8ts2xy781" path="res://Art/GatherersExterior/Objects/Grass/tree_pine.png" id="4_npvyc"]
+[ext_resource type="PackedScene" uid="uid://c1i6ma3cj1mcm" path="res://Effects/depleted_resources_explosion.tscn" id="4_r8iyk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wuuyo"]
+radius = 6.0
+height = 12.0
+
+[node name="ResourceNode_PineTree" type="StaticBody2D"]
+script = ExtResource("1_khgqe")
+node_types = Array[Resource("res://Objects/Resources/Types/resource_node_type.gd")]([ExtResource("2_hegsu")])
+starting_resources = 5
+pickup_type = ExtResource("3_t38jc")
+depleted_effect = ExtResource("4_r8iyk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_npvyc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("CapsuleShape2D_wuuyo")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dogvli3i5dq6c"]
+
+[ext_resource type="Script" path="res://Objects/Pickups/pickup.gd" id="1_4jib2"]
+[ext_resource type="Resource" uid="uid://bukmbx81l4og6" path="res://Items/Resources/resource_rock.tres" id="2_4rkqg"]
+[ext_resource type="Texture2D" uid="uid://c3slv5s86pyef" path="res://Art/GatherersExterior/Resources/rock_item.png" id="2_oe7or"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r6vj3"]
+radius = 4.0
+
+[node name="Pickup_Rock" type="Area2D"]
+z_index = -5
+script = ExtResource("1_4jib2")
+resource_type = ExtResource("2_4rkqg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oe7or")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_r6vj3")

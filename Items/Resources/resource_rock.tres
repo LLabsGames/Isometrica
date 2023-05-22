@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://bukmbx81l4og6"]
+
+[ext_resource type="Script" path="res://Items/Resources/resource_item.gd" id="1_orrkm"]
+[ext_resource type="Texture2D" uid="uid://c3slv5s86pyef" path="res://Art/GatherersExterior/Resources/rock_item.png" id="2_myxxl"]
+
+[resource]
+resource_name = "Rock"
+script = ExtResource("1_orrkm")
+display_name = "Rock"
+texture = ExtResource("2_myxxl")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsn7jeiwnvoe"]
+
+[ext_resource type="Script" path="res://Objects/Resources/ResourceNode.gd" id="1_wludv"]
+[ext_resource type="Resource" uid="uid://ds7ax48gnanmt" path="res://Objects/Resources/Types/axeable.tres" id="2_nm021"]
+[ext_resource type="PackedScene" uid="uid://byedex58qbksr" path="res://Objects/Pickups/pickup_brown_wood.tscn" id="3_lscko"]
+[ext_resource type="PackedScene" uid="uid://c1i6ma3cj1mcm" path="res://Effects/depleted_resources_explosion.tscn" id="4_57sqg"]
+[ext_resource type="Texture2D" uid="uid://bcpqnlcli355q" path="res://Art/GatherersExterior/Objects/Desert/tree_savana.png" id="5_pq2ud"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wuuyo"]
+radius = 7.0
+height = 16.0
+
+[node name="ResourceNode_SavannaTree" type="StaticBody2D"]
+script = ExtResource("1_wludv")
+node_types = Array[Resource("res://Objects/Resources/Types/resource_node_type.gd")]([ExtResource("2_nm021")])
+starting_resources = 7
+pickup_type = ExtResource("3_lscko")
+depleted_effect = ExtResource("4_57sqg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -16)
+texture = ExtResource("5_pq2ud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_wuuyo")

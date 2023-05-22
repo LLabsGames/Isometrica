@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://bepy0uxcgxxeu"]
+
+[ext_resource type="Script" path="res://Objects/Resources/ResourceNode.gd" id="1_mk42o"]
+[ext_resource type="Texture2D" uid="uid://df2x3f7a5lqya" path="res://Art/GatherersExterior/Objects/Grass/Rock_Tall1.png" id="1_wqgm5"]
+[ext_resource type="Resource" uid="uid://clc4d3s1yx1fn" path="res://Objects/Resources/Types/minable.tres" id="2_fbhev"]
+[ext_resource type="PackedScene" uid="uid://dogvli3i5dq6c" path="res://Objects/Pickups/pickup_rock.tscn" id="3_5vcrn"]
+[ext_resource type="PackedScene" uid="uid://c1i6ma3cj1mcm" path="res://Effects/depleted_resources_explosion.tscn" id="4_esn8y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wuuyo"]
+radius = 7.0
+height = 14.0
+
+[node name="ResourceNode_RockTall" type="StaticBody2D"]
+script = ExtResource("1_mk42o")
+node_types = Array[Resource("res://Objects/Resources/Types/resource_node_type.gd")]([ExtResource("2_fbhev")])
+starting_resources = 5
+pickup_type = ExtResource("3_5vcrn")
+depleted_effect = ExtResource("4_esn8y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wqgm5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_wuuyo")
