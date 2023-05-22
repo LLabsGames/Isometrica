@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Isometrica.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1.0</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>4AB10B812652EE9276EB6DA51F2D3229E71F9997</string>
+				<key>dateExpires</key>
+				<string>02.11.2023</string>
+				<key>type</key>
+				<string>Apple Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>X93K6MEBXB.games.llabs.isometrica</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>X93K6MEBXB</string>
+				<key>get-task-allow</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>Isometrica.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>5e975643-5a04-4bd0-8d4b-aa8154abed81</string>
+				<key>dateExpires</key>
+				<string>21.05.2024</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: games.llabs.isometrica</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>X93K6MEBXB</string>
+				<key>name</key>
+				<string></string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>

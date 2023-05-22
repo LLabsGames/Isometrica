@@ -11,11 +11,22 @@ class_name ItemButton
 var hand_equip : HandEquip
 
 func _ready():
-	if(not Engine.is_editor_hint()):
-		connect("pressed", _on_pressed)
-	
+	if not Engine.is_editor_hint():
+		if DisplayServer.is_touchscreen_available():
+			connect("gui_input", _on_gui_input)
+		else:
+			connect("pressed", _on_pressed)
+
+func _on_gui_input(event):
+	if event is InputEventScreenTouch:
+		if event.pressed:
+			_on_pressed()
+
 func _on_pressed():
-	if(not Engine.is_editor_hint()):
-		if(item is EquipableItem):
-			if(hand_equip != null):
-				hand_equip.equipped_item = item
+	if item is EquipableItem:
+		if hand_equip:
+			hand_equip.equipped_item = item
+		else:
+			print("HandEquip node is missing. Make sure it is added to the scene.")
+	else:
+		print("Item is not of type EquipableItem.")

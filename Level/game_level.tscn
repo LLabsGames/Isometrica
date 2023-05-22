@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://blnb3f2s67g72"]
+[gd_scene load_steps=13 format=3 uid="uid://blnb3f2s67g72"]
 
 [ext_resource type="PackedScene" uid="uid://bvaqbkcnyrelv" path="res://Characters/player.tscn" id="1_ux72s"]
 [ext_resource type="PackedScene" uid="uid://bepy0uxcgxxeu" path="res://Objects/Resources/resource_node_rock_tall.tscn" id="2_fhmkd"]
 [ext_resource type="PackedScene" uid="uid://dk3fjqkrr3r7m" path="res://UI/resource_display.tscn" id="3_44ipy"]
 [ext_resource type="PackedScene" uid="uid://byedex58qbksr" path="res://Objects/Pickups/pickup_brown_wood.tscn" id="4_5fbwv"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://joystick/virtual_joystick.tscn" id="4_23hs2"]
 [ext_resource type="PackedScene" uid="uid://cvcpbppln51ln" path="res://UI/hotbar.tscn" id="4_ko0hj"]
 [ext_resource type="TileSet" uid="uid://cshlf35mhllki" path="res://Tilesets/main_tileset.tres" id="5_eb6ek"]
 [ext_resource type="PackedScene" uid="uid://csewi00bgdghf" path="res://Objects/Resources/resource_node_tree_pine.tscn" id="6_1scwa"]
@@ -29,10 +30,29 @@ drag_vertical_enabled = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ResourceDisplay" parent="CanvasLayer" instance=ExtResource("3_44ipy")]
-metadata/_edit_lock_ = true
 
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("4_ko0hj")]
 metadata/_edit_lock_ = true
+
+[node name="Virtual Joystick Left" parent="CanvasLayer" instance=ExtResource("4_23hs2")]
+offset_top = -60.0
+offset_bottom = 240.0
+scale = Vector2(0.2, 0.2)
+visibility_mode = 1
+autohide = false
+
+[node name="Virtual Joystick Right" parent="CanvasLayer" instance=ExtResource("4_23hs2")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 240.0
+offset_bottom = 240.0
+grow_horizontal = 0
+scale = Vector2(0.2, 0.2)
+joystick_mode = 1
+visibility_mode = 1
 
 [node name="Pickup_Wood" parent="." instance=ExtResource("4_5fbwv")]
 position = Vector2(124, 84)
