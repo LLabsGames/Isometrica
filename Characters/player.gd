@@ -14,10 +14,10 @@ var sprite_direction: Vector2 = Vector2.DOWN
 func _ready():
 	animation_tree.active = true
 
-func _process(delta):
+func _process(_delta):
 	update_animation_parameters()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Use joystick for movement if it's pressed, otherwise use keyboard inputs
 	update_movement()
 
